@@ -27,29 +27,29 @@ public class CANDrivetrain extends SubsystemBase {
    * member variables and perform any configuration or set up necessary on hardware.
    */
   public CANDrivetrain() {
-    CANSparkMax leftFront = new CANSparkMax(kLeftFrontID, MotorType.kBrushed);
-    CANSparkMax leftRear = new CANSparkMax(kLeftRearID, MotorType.kBrushed);
-    CANSparkMax rightFront = new CANSparkMax(kRightFrontID, MotorType.kBrushed);
-    CANSparkMax rightRear = new CANSparkMax(kRightRearID, MotorType.kBrushed);
+    CANSparkMax leftMovey = new CANSparkMax(kMoveyWheelLeftID, MotorType.kBrushed);
+    //CANSparkMax leftRear = new CANSparkMax(kLeftRearID, MotorType.kBrushed);
+    CANSparkMax rightMovey = new CANSparkMax(kMoveyWheelRightID, MotorType.kBrushed);
+    //CANSparkMax rightRear = new CANSparkMax(kRightRearID, MotorType.kBrushed);
 
     /*Sets current limits for the drivetrain motors. This helps reduce the likelihood of wheel spin, reduces motor heating
      *at stall (Drivetrain pushing against something) and helps maintain battery voltage under heavy demand */
-    leftFront.setSmartCurrentLimit(kCurrentLimit);
-    leftRear.setSmartCurrentLimit(kCurrentLimit);
-    rightFront.setSmartCurrentLimit(kCurrentLimit);
-    rightRear.setSmartCurrentLimit(kCurrentLimit);
+    leftMovey.setSmartCurrentLimit(kCurrentLimit);
+    //leftRear.setSmartCurrentLimit(kCurrentLimit);
+    rightMovey.setSmartCurrentLimit(kCurrentLimit);
+    //rightRear.setSmartCurrentLimit(kCurrentLimit);
 
     // Set the rear motors to follow the front motors.
-    leftRear.follow(leftFront);
-    rightRear.follow(rightFront);
+    //leftRear.follow(leftMovey);
+    //rightRear.follow(rightMovey);
 
     // Invert the left side so both side drive forward with positive motor outputs
-    leftFront.setInverted(true);
-    rightFront.setInverted(false);
+    leftMovey.setInverted(true);
+    rightMovey.setInverted(false);
 
     // Put the front motors into the differential drive object. This will control all 4 motors with
     // the rears set to follow the fronts
-    m_drivetrain = new DifferentialDrive(leftFront, rightFront);
+    m_drivetrain = new DifferentialDrive(leftMovey, rightMovey);
   }
 
   /*Method to control the drivetrain using arcade drive. Arcade drive takes a speed in the X (forward/back) direction

@@ -22,10 +22,10 @@ public final class Constants {
 
   public static class DrivetrainConstants {
     // PWM ports/CAN IDs for motor controllers
-    public static final int kLeftRearID = 1;
-    public static final int kLeftFrontID = 2;
-    public static final int kRightRearID = 3;
-    public static final int kRightFrontID = 4;
+    public static final int kShootyWheelTopID = 22;
+    public static final int kShootyWheelSideID = 21;
+    public static final int kMoveyWheelRightID = 12;
+    public static final int kMoveyWheelLeftID  = 11;
 
     // Current limit for drivetrain motors
     public static final int kCurrentLimit = 60;

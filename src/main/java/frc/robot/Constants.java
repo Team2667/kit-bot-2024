@@ -17,18 +17,18 @@ public final class Constants {
     // Port numbers for driver and operator gamepads. These correspond with the numbers on the USB
     // tab of the DriverStation
     public static final int kDriverControllerPort = 0;
-    public static final int kOperatorControllerPort = 1;
+    public static final int kOperatorControllerPort = 0;
   }
 
   public static class DrivetrainConstants {
     // PWM ports/CAN IDs for motor controllers
-    public static final int kShootyWheelTopID = 22;
-    public static final int kShootyWheelSideID = 21;
+    public static final int kShootyWheelID = 22;
+    public static final int kIntakeyWheelID = 21;
     public static final int kMoveyWheelRightID = 12;
     public static final int kMoveyWheelLeftID  = 11;
 
     // Current limit for drivetrain motors
-    public static final int kCurrentLimit = 60;
+    public static final int kCurrentLimit = 1;
   }
 
   public static class LauncherConstants {

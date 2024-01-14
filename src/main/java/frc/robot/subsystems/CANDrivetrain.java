@@ -27,9 +27,9 @@ public class CANDrivetrain extends SubsystemBase {
    * member variables and perform any configuration or set up necessary on hardware.
    */
   public CANDrivetrain() {
-    CANSparkMax leftMovey = new CANSparkMax(kMoveyWheelLeftID, MotorType.kBrushed);
+    CANSparkMax leftMovey = new CANSparkMax(kMoveyWheelLeftID, MotorType.kBrushless);
     //CANSparkMax leftRear = new CANSparkMax(kLeftRearID, MotorType.kBrushed);
-    CANSparkMax rightMovey = new CANSparkMax(kMoveyWheelRightID, MotorType.kBrushed);
+    CANSparkMax rightMovey = new CANSparkMax(kMoveyWheelRightID, MotorType.kBrushless);
     //CANSparkMax rightRear = new CANSparkMax(kRightRearID, MotorType.kBrushed);
 
     /*Sets current limits for the drivetrain motors. This helps reduce the likelihood of wheel spin, reduces motor heating

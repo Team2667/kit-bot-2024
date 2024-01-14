@@ -4,6 +4,8 @@
 
 package frc.robot.subsystems;
 
+import static frc.robot.Constants.DrivetrainConstants.kIntakeyWheelID;
+import static frc.robot.Constants.DrivetrainConstants.kShootyWheelID;
 import static frc.robot.Constants.LauncherConstants.*;
 
 import com.revrobotics.CANSparkMax;
@@ -17,8 +19,8 @@ public class CANLauncher extends SubsystemBase {
 
   /** Creates a new Launcher. */
   public CANLauncher() {
-    m_launchWheel = new CANSparkMax(kLauncherID, MotorType.kBrushed);
-    m_feedWheel = new CANSparkMax(kFeederID, MotorType.kBrushed);
+    m_launchWheel = new CANSparkMax(kShootyWheelID, MotorType.kBrushless);
+    m_feedWheel = new CANSparkMax(kIntakeyWheelID, MotorType.kBrushless);
 
     m_launchWheel.setSmartCurrentLimit(kLauncherCurrentLimit);
     m_feedWheel.setSmartCurrentLimit(kFeedCurrentLimit);
